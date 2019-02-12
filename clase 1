@@ -1,0 +1,21 @@
+// clase 1.cpp : Defines the entry point for the console application.
+//
+//LIBRERIAS//
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+int main(void)
+{//tipos de datos//
+	float p,i;
+    do{cout<<"Digite el precio:"<<endl;
+    cin>>p;}
+    while(p<0);
+    i=p*0.13;
+    p=p+i;//acumulador//
+    cout<<"El Precio con IVA es:"<<endl;
+    cout<<p<<endl;
+    getch();
+	return 0;
+}
+
