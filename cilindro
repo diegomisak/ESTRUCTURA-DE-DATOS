@@ -1,0 +1,53 @@
+#pragma once
+class Cilindro
+{private:
+  
+  float r;
+  float h;
+
+ public:
+	Cilindro(float _r,float _h);
+	~Cilindro(void);
+	float Area();
+
+};
+
+#include "StdAfx.h"
+#include "Cilindro.h"
+
+
+Cilindro::Cilindro(float _r,float _h)
+{r=_r;
+ h=_h;
+}
+
+
+Cilindro::~Cilindro(void)
+{
+}
+
+float Cilindro::Area()
+{float A; float pi=3.14;
+ A=(2*pi*r)*(r+h);
+ return A;
+}
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "Cilindro.h"
+using namespace std;
+
+int main(void)
+
+{float r,h;
+	cout<<"Ingrese radio:"<<endl;
+	cin>>r;
+	cout<<"Ingrese altura:"<<endl;
+	cin>>h;
+	Cilindro c1(r,h);
+	cout<<"El Area es :"<<c1.Area()<<endl;
+	return 0;
+	getch();
+}
+
