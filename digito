@@ -1,0 +1,56 @@
+#pragma once
+class Digitos
+{
+private:
+	int num;
+
+public:
+	Digitos(void);
+	~Digitos(void);
+	bool Pares(int num);
+};
+
+#include "StdAfx.h"
+#include "Digitos.h"
+
+
+Digitos::Digitos(void)
+{
+}
+
+
+Digitos::~Digitos(void)
+{
+}
+
+bool Digitos::Pares(int num)
+{ bool aux=false;
+  int digito=num%10;
+    do{if(digito%2==0)
+	   {aux=true;}
+	   num=num/10; 
+      }while(num>0);
+	return aux;
+
+}
+
+#include "stdafx.h"
+#include <iostream>
+#include "Digitos.h"
+#include "conio.h"
+using namespace std;
+int main(void)
+
+{
+	 int num;
+    cout<<"Ingrese numero:"<<endl;
+	cin>>num;
+    Digitos d1;
+	if(d1.Pares(num)==true)
+	{cout<<"Si tiene digitos pares"<<endl;}
+	else
+	{cout<<"No tiene digitos pares"<<endl;}
+	return 0;
+	getch();
+}
+
