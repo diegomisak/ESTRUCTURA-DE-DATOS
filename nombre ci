@@ -1,0 +1,56 @@
+#pragma once
+#include <string>
+using namespace std;
+class Persona
+{
+private:
+	int CI;
+	string nombre;
+public:
+	Persona(int _CI,string _nombre);
+	~Persona(void);
+	int getCI();
+	string getname();
+};
+
+#include "StdAfx.h"
+#include "Persona.h"
+#include <string>
+using namespace std;
+
+Persona::Persona(int _CI,string _nombre)
+{
+}
+
+
+Persona::~Persona(void)
+{
+}
+
+int Persona::getCI()
+{return CI;
+}
+
+string Persona::getname()
+{return nombre;
+}
+#include "stdafx.h"
+#include <iostream>
+#include "Persona.h"
+#include "conio.h"
+#include <string>
+using namespace std;
+int main(void)
+{
+	int CI;
+	string nombre;
+	cout<<"Ingrese CI:"<<endl;
+	cin>>CI;
+	cout<<"Ingrese Nombre:"<<endl;
+	getline(cin,nombre);
+	Persona p1(CI,nombre);
+	cout<<"El CI es :"<<p1.getCI()<<endl;
+	cout<<"El nombre es :"<<p1.getname()<<endl;
+	return 0;
+}
+
