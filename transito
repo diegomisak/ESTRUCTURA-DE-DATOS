@@ -1,0 +1,86 @@
+Dato.h
+
+#pragma once
+#include <string>
+using namespace std;
+class Dato
+{public:
+ string placa;
+ string chasis;
+ string marca;
+ string modelo;
+ int anho;
+ Dato(){
+ placa = "Unknow";
+ chasis = "Unknow";
+ marca ="Unknow";
+ modelo="Unknow";
+ anho = 0;
+ }
+ void saveplaca(string _placa)
+ { placa = _placa;}
+  
+ void savechasis(string _chasis)
+ { chasis = _chasis;}
+
+ void savemarca(string _marca)
+ { marca = _marca;}
+
+ void savemodelo(string _modelo)
+ {modelo = _modelo;}
+ 
+ void saveyear(int _anho)
+ {anho = _anho;}
+};
+
+Nodo.h
+
+#pragma once
+#include "Dato.h"
+#include "iostream"
+#define MAX 100
+using namespace std;
+
+class Nodo { public:
+	Dato Pila[MAX];
+	int cima;
+
+	Nodo(void){
+		cima = -1;
+	}
+
+	bool apilar (Dato _auto){
+	 bool resp;
+	 if(cima == MAX-1){
+		 cout<<"No se puede ingresar otro auto en la pila, (overflow)";
+		 return resp = false;
+	 }else{
+		 cima++;
+		 Pila[cima]= _auto;
+		 return resp = true;
+	 }
+	}
+	bool desapilar(){
+	bool resp;
+	 if(cima == -1){
+		 cout<<"Error no hay autos";
+		 return resp = false;
+	 }else{
+		 cima--;
+		 return resp = true;
+	 }
+	}
+	void mostrar(){
+
+		  for(int i=0;i<=cima;i++){
+			cout << Pila[i] << endl;
+		}
+	}
+	bool pilavacia(){
+		if(cima==-1){
+		 return true;
+		}
+	}
+	~Nodo(void);
+};
+
